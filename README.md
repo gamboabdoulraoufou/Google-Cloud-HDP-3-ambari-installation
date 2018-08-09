@@ -21,11 +21,11 @@ sudo su - root
 
 # download
 ## from internet (https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.1.0/bk_ambari-installation/content/ambari_repositories.html)
-wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.0.1/ambari.repo
-wget http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.5.6.0/hdp.repo
-wget http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz
+wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.0.0/ambari.repo
+wget http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.4.0/hdp.repo
+wget http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7/HDP-UTILS-1.1.0.22-centos7.tar.gz
 mkdir HDP-UTILS
-tar -xvzf HDP-UTILS-1.1.0.21-centos7.tar.gz -C HDP-UTILS
+tar -xvzf HDP-UTILS-1.1.0.22-centos7.tar.gz -C HDP-UTILS
 cp HDP-UTILS/hdp-util.repo .
 
 ## from local repository
@@ -342,6 +342,9 @@ vi /etc/ambari-agent/conf/ambari-agent.ini
 hostname=poc-hdp-1.c.equipe-1314.internal
 [agent]
 hostname_script=/var/lib/ambari-agent/hostname.sh
+
+[security]
+force_https_protocol=PROTOCOL_TLSv1_2
 
 # save and quit
 
